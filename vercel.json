@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "login-api.js", "use": "@vercel/node" },
+    { "src": "dashboard-api.js", "use": "@vercel/node" },
+    { "src": "users-api.js", "use": "@vercel/node" },
+    { "src": "music-api.js", "use": "@vercel/node" },
+    { "src": "leaderboard-api.js", "use": "@vercel/node" },
+    { "src": "deploy-api.js", "use": "@vercel/node" },
+    { "src": "settings-api.js", "use": "@vercel/node" },
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "styles.css", "use": "@vercel/static" },
+    { "src": "config.js", "use": "@vercel/static" },
+    { "src": "utils.js", "use": "@vercel/static" },
+    { "src": "validation.js", "use": "@vercel/static" },
+    { "src": "app.js", "use": "@vercel/static" },
+    { "src": "dashboard.js", "use": "@vercel/static" },
+    { "src": "users.js", "use": "@vercel/static" },
+    { "src": "music.js", "use": "@vercel/static" },
+    { "src": "leaderboard.js", "use": "@vercel/static" },
+    { "src": "deploy.js", "use": "@vercel/static" },
+    { "src": "settings.js", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/login", "dest": "/login-api.js" },
+    { "src": "/api/dashboard", "dest": "/dashboard-api.js" },
+    { "src": "/api/users", "dest": "/users-api.js" },
+    { "src": "/api/music", "dest": "/music-api.js" },
+    { "src": "/api/leaderboard", "dest": "/leaderboard-api.js" },
+    { "src": "/api/deploy", "dest": "/deploy-api.js" },
+    { "src": "/api/settings", "dest": "/settings-api.js" }
+  ]
+}

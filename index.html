@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FELIX PANEL REMOTE</title>
+<meta name="description" content="FELIX PANEL REMOTE - Project By Chris" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<canvas id="galaxy-bg"></canvas>
+
+<div id="loading-screen">
+  <div class="loading-orbit"></div>
+  <div class="loading-text">FELIX PANEL REMOTE — PROJECT BY CHRIS</div>
+</div>
+
+<div id="toast-container"></div>
+
+<!-- LOGIN VIEW -->
+<div id="login-view" class="hidden">
+  <form id="login-form" class="glass neon card login-card">
+    <div class="login-brand">FELIX PANEL REMOTE</div>
+    <div class="login-sub">PROJECT BY CHRIS</div>
+    <div class="field" style="text-align:left;">
+      <label for="login-username">Username</label>
+      <input id="login-username" name="username" autocomplete="username" required />
+    </div>
+    <div class="field" style="text-align:left;">
+      <label for="login-password">Password</label>
+      <input id="login-password" name="password" type="password" autocomplete="current-password" required />
+    </div>
+    <button type="submit" class="btn btn-primary" style="width:100%;" id="login-submit">Sign In</button>
+    <div class="login-error" id="login-error"></div>
+  </form>
+</div>
+
+<!-- APP SHELL -->
+<div id="app-shell" class="hidden">
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-name">FELIX PANEL REMOTE</div>
+      <div class="brand-sub">PROJECT BY CHRIS</div>
+    </div>
+    <ul class="nav-list" id="nav-list">
+      <li class="nav-item" data-route="dashboard"><span class="nav-dot"></span>Dashboard</li>
+      <li class="nav-item" data-route="users"><span class="nav-dot"></span>Users</li>
+      <li class="nav-item" data-route="music"><span class="nav-dot"></span>Music</li>
+      <li class="nav-item" data-route="leaderboard"><span class="nav-dot"></span>Leaderboard</li>
+      <li class="nav-item" data-route="deploy"><span class="nav-dot"></span>Deploy Center</li>
+      <li class="nav-item" data-route="settings"><span class="nav-dot"></span>Settings</li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="user-name" id="sidebar-username">-</div>
+      <div id="sidebar-role" class="muted">-</div>
+      <div style="margin-top:10px;">
+        <button class="btn btn-ghost" id="logout-btn" style="padding:6px 12px; font-size:0.78rem;">Sign out</button>
+      </div>
+    </div>
+  </aside>
+
+  <div id="main-area">
+    <div id="topbar">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">&#9776;</button>
+        <h1 id="page-title">Dashboard</h1>
+      </div>
+      <button class="btn" id="refresh-btn">Refresh</button>
+    </div>
+    <div id="page-content"></div>
+  </div>
+</div>
+
+<!-- Shared config / utils / validation (isomorphic, no secrets) -->
+<script src="config.js"></script>
+<script src="utils.js"></script>
+<script src="validation.js"></script>
+
+<!-- App bootstrap: galaxy canvas, router, session, toasts, api client -->
+<script src="app.js"></script>
+
+<!-- Page modules -->
+<script src="dashboard.js"></script>
+<script src="users.js"></script>
+<script src="music.js"></script>
+<script src="leaderboard.js"></script>
+<script src="deploy.js"></script>
+<script src="settings.js"></script>
+
+</body>
+</html>

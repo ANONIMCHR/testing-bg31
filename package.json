@@ -1,0 +1,16 @@
+{
+  "name": "felix-panel-remote",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FELIX PANEL REMOTE (Project By Chris) - futuristic admin panel that uses a GitHub repository as a JSON database for users and music, with automatic multi-file rotation and safe GitHub-API deploys. Deployable on Vercel.",
+  "main": "config.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev",
+    "build": "node -e \"console.log('FELIX PANEL REMOTE is a static + serverless project — no bundling step is required. Build check passed.')\""
+  },
+  "engines": {
+    "node": ">=18.x"
+  },
+  "license": "UNLICENSED"
+}
